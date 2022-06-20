@@ -1,0 +1,58 @@
+import java.sql.SQLOutput;
+
+public class Main {
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente();
+        Trabajador trabajador = new Trabajador();
+
+        cliente.setEdad(45);
+        cliente.setNombre("Anastasia");
+        cliente.setTelefono("50248787888");
+        cliente.credito = (float)6524.25;
+        System.out.println(cliente.getNombre() + ", " + cliente.getEdad() + ", " + cliente.getTelefono() + ", " + cliente.credito);
+
+        trabajador.setEdad(29);
+        trabajador.setNombre("Raul");
+        trabajador.setTelefono("50248785555");
+        trabajador.salario = (float)5624.30;
+        System.out.println(trabajador.getNombre() + ", " + trabajador.getEdad() + ", " + trabajador.getTelefono() + ", " + trabajador.salario);
+    }
+}
+
+class Persona{
+    private int edad;
+    private String nombre;
+    private String telefono;
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+}
+
+final class Cliente extends Persona{
+    float credito;
+}
+
+final class Trabajador extends Persona{
+    float salario;
+}
